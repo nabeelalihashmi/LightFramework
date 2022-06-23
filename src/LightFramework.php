@@ -139,7 +139,7 @@ class LightFramework {
      * Access the plugged in module
      *
      * @param string $module_name
-     * @return void
+     * @return callable
      */
     public function getModule($module_name) {
         return $this->modules[$module_name];
@@ -234,8 +234,8 @@ class LightFramework {
     /**
      * Set configurations in config using array key
      *
-     * @param [type] $key
-     * @param [type] $val
+     * @param string $key
+     * @param string $val
      * @return void
      */
     public static function setConfigRaw($key, $val) {

@@ -74,6 +74,144 @@ $light->init();
 ## NOTE
 When `init` is called, first autoload libs in autoload direcotry all loaded. After that plugin in autoload_module.config.php file are loaded.
 
+
+## Methods
+## getVersion
+    
+* Get version of the LightFramework
+
+```
+public static function getVersion()
+```
+    
+* Constructor
+* string $config_dir
+* string $autoload_dir
+* string $global_symbol
+```
+public function __construct($config_dir = 'config', $autoload_dir = 'autoload', $global_symbol = '__')
+```
+
+## instance    
+* Returns the instance of framework if constructor is called otherwise thrrows exception
+* returns self
+* @throws Exception
+```
+public static function instance()
+```
+
+## defer
+* Defer the call to run at the end of exection or when runDefered() is called
+* integer $id
+* callable $callback
+* returns void
+```
+public function defer(int $id, callable $callback)
+```
+
+## init
+* Initiate the function
+* returns void
+```
+public function init()
+```
+
+## runDeferred
+* Run the deffered calls. If second argument is set to false, the calls are not removed from list. If calls 
+* are prematurely called, then at end of execution they will be called again.
+* array $ids
+* boolean $remove_upon_calling
+* returns void
+```
+public function runDeferred($ids = [], $remove_upon_calling = true)
+```
+
+## plugModule    
+* Add Modules to Framework and run callback functions
+* string $identifier
+* callable $object
+* string $callback
+* returns void
+```
+public function plugModule($identifier, $object, $callback = null)
+```
+    
+* Remove plugged in modules from Framework and run callback function
+* string $identifier
+* callback $callback
+* returns void
+```
+public function unplugModule($identifier, $callback = null)
+```
+
+## getModule
+* Access the plugged in module
+* string $module_name
+* returns callable
+```
+public function getModule($module_name) 
+```
+
+## get
+* Get value from array using dot notation
+* array $array
+* string $key
+* string $default
+* returns void
+```
+public static function get($array, $key, $default = null) 
+```
+
+## set
+* Set value of array using dot notation
+* string $array
+* string $key
+* string $value
+* returns void
+```
+public static function set(&$array, $key, $value) 
+```
+
+## getConfig
+* Get configurations from config using dot notation
+* string $key
+* returns void
+```
+public static function getConfig($key)
+```
+
+## setConfig
+* Set value of config using dot notation
+* string $key
+* string $value
+* returns void
+```
+public static function setConfig($key, $value)
+```
+## getConfigRaw
+* Get configurations from config using array key
+* string $key
+* returns void
+```
+public static function getConfigRaw($key)
+```
+## setConfigRaw
+* Set configurations in config using array key
+* array key $key
+* string $val
+* returns void
+```
+public static function setConfigRaw($key, $val)
+```
+
+## getConfigAll
+* Return config array for debugging purposes.
+* returns void
+```
+public static function getConfigAll()
+```
+
+
 -------------------------
 
 ## License
