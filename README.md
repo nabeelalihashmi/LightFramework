@@ -219,7 +219,7 @@ public static function getConfigAll()
 LightFramework is released under permissive licese with following conditions:
 
 * It cannot be used to create adult apps.
-* It cannot be used to gambling apps.
+* It cannot be used to create gambling apps.
 * It cannot be used to create apps having hate speech.
 * You must mention LightFramework in credits.
 
