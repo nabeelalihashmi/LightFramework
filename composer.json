@@ -1,0 +1,36 @@
+{
+    "name": "nabeelalihashmi/lightframework",
+    "description": "Module PHP Framework Base",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "IconicCodes\\LightFramework\\": "src/",
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nabeel Ali",
+            "email": "mail2nabeelali@gmail.com"
+        }
+    ],
+    "require": {
+    },
+    "require-dev": {
+    },
+    "suggest": {
+        "nabeelalihashmi/lighthttp": "dev-master",
+        "nabeelalihashmi/lightrouter": "dev-master",
+        "nabeelalihashmi/lightview": "dev-master",
+        "nabeelalihashmi/lightauth": "dev-master",
+        "nabeelalihashmi/lightcache": "dev-master",
+        "nabeelalihashmi/lightdb": "dev-master",
+        "nabeelalihashmi/lightutils": "dev-master",
+        "nabeelalihashmi/lightvalidator": "dev-master",
+        "nabeelalihashmi/lighttest": "dev-master",
+        "nabeelalihashmi/lightstats": "dev-master"
+    },
+    
+    "minimum-stability": "dev"
+}
