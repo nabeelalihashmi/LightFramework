@@ -25,7 +25,7 @@ class LightFramework {
     /**
      * Get version of the LightFramework
      *
-     * @return void
+     * @return string
      */
     public static function getVersion() {
         return self::VERSION;
@@ -109,8 +109,8 @@ class LightFramework {
      * Add Modules to Framework and run callback functions
      *
      * @param string $identifier
-     * @param callable $object
-     * @param string $callback
+     * @param mixed $object
+     * @param callable|null $callback
      * @return void
      */
     public function plugModule($identifier, $object, $callback = null) {
@@ -124,7 +124,7 @@ class LightFramework {
      * Remove plugged in modules from Framework and run callback function
      *
      * @param string $identifier
-     * @param callback $callback
+     * @param $callback
      * @return void
      */
     public function unplugModule($identifier, $callback = null) {
@@ -149,9 +149,9 @@ class LightFramework {
      * Get vlue from array using dot notation
      *
      * @param array $array
-     * @param string $key
-     * @param string $default
-     * @return void
+     * @param mixed $key
+     * @param mixed $default
+     * @return mixed
      */
     public static function get($array, $key, $default = null) {
         if (is_null($key)) return $array;
@@ -175,14 +175,14 @@ class LightFramework {
     /**
      * Set value of array using dot notation
      *
-     * @param string $array
-     * @param string $key
-     * @param string $value
-     * @return void
+     * @param array $array
+     * @param mixed $key
+     * @param mixed $value
+     * @return mixed
      */
-    public static function set(&$array, $key, $value) {
-        if (is_null($key)) return $array = $value;
+    // phpstan can change types
 
+    public static function set(&$array, $key, $value) {
         $keys = explode('.', $key);
 
         while (count($keys) > 1) {
@@ -204,7 +204,7 @@ class LightFramework {
      * Get configurations from config using dot notation
      *
      * @param string $key
-     * @return void
+     * @return mixed
      */
     public static function getConfig($key) {
         return self::get(self::$config, $key);
@@ -215,7 +215,7 @@ class LightFramework {
      *
      * @param string $key
      * @param string $value
-     * @return void
+     * @return mixed
      */
     public static function setConfig($key, $value) {
         return self::set(self::$config, $key, $value);
@@ -225,7 +225,7 @@ class LightFramework {
      * Get configurations from config using array key
      *
      * @param string $key
-     * @return void
+     * @return mixed
      */
     public static function getConfigRaw($key) {
         return self::$config[$key];
@@ -245,7 +245,7 @@ class LightFramework {
     /**
      * Return config array for debugging purposes.
      *
-     * @return void
+     * @return array
      */
     public static function getConfigAll() {
         return self::$config;

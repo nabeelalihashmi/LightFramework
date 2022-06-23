@@ -164,7 +164,7 @@ public static function get($array, $key, $default = null)
 
 ## set
 * Set value of array using dot notation
-* string $array
+* array $array
 * string $key
 * string $value
 * returns void
