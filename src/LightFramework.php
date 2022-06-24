@@ -42,7 +42,9 @@ class LightFramework {
         $this->config_dir = $config_dir;
         $this->autoload_dir = $autoload_dir;
         $this->build_config($this->config_dir);
-        define($global_symbol,  $this);
+        if ($global_symbol !== null) {    
+            define($global_symbol,  $this);
+        }
         self::$__instance = $this;
     }
 
